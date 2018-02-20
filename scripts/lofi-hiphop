@@ -1,0 +1,6 @@
+#!/bin/bash
+
+bspc rule -a URxvt -o state=floating rectangle=650x250+1266+826
+urxvt -e bash -c "mpsyt play lofi" &
+bspc rule -a URxvt -o state=floating rectangle=650x170+1266+652
+urxvt -e cava &
