@@ -13,6 +13,18 @@ super + @space
 super + shift + Return
 	chromium-browser
 
+
+#### CUSTOM ####
+# negative -w arg to account for a border width (default: 100%)
+super + backslash
+    tdrop -ma -w -4 -h 30% -y 0% urxvt
+
+super + shift + Return
+	chromium-browser
+
+super + n
+	~/wm/scripts/notes.sh
+
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
@@ -131,3 +143,11 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+XF86MonBrightnessUp
+	~/wm/scripts/brightness-script.sh up
+
+
+XF86MonBrightnessDown
+        ~/wm/scripts/brightness-script.sh down
+
