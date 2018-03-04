@@ -1,50 +1,54 @@
-! vim: set filetype=xdefaults :
-! gjm scheme
-! *background: rgba:0000/0000/0000/dddd
-
-*cursorColor:   #cee318
-
-*background:    #1C1C1C
-*foreground:    #c5c5c5
+! special
+*.foreground:   #b5c1b5
+*.background:   #0c0c0c
+*.cursorColor:  #b5c1b5
 
 ! black
-*color0:        #1C1C1C
-*color8:        #666666
+*.color0:       #1b1c1b
+*.color8:       #88e089
 
 ! red
-*color2:        #ff005b
-*color10:        #ff00a0
+*.color1:       #8bd28b
+*.color9:       #69dbd6
 
 ! green
-*color1:        #cee318
-*color9:       #ccff00
+*.color2:       #343634
+*.color10:      #5dd05f
 
 ! yellow
-*color3:        #ffe755
-*color11:       #ff9f00
+*.color3:       #616161
+*.color11:      #6ed76f
 
 ! blue
-*color4:        #048ac7
-*color12:       #48c6ff
+*.color4:       #666b66
+*.color12:      #bdffd5
 
 ! magenta
-*color5:        #833c9f
-*color13:       #be67e1
+*.color5:       #888e88
+*.color13:      #81b6be
 
-! cyan 
-*color6:        #0ac1cd
-*color14:       #63e7f0
+! cyan
+*.color6:       #b0b6b0
+*.color14:      #80ebff
 
 ! white
-*color7:        #e5e5e5
-*color15:       #f3f3f3
+*.color7:       #81ff81
+*.color15:      #cdcdcd
 
-urxvt*transparent: true
-urxvt*shading: 25
-
-urxvt.scrollBar: false
+URxvt*transparent: true
+URxvt*shading: 25
 
 
+URxvt.cursorBlink  :0
+URxvt.font         :xft:dina:size=8
+URxvt.boldFont     :xft:dina:size=8
 
-urxvt.font:     xft:bitstream vera sans mono:size=10:antialias=true
-urxvt.boldFont: xft:bitstream vera sans mono:bold:size=10:antialias=true
+URxvt.lineSpace           : 0
+URxvt.letterSpace         : 0
+URxvt.scrollBar           : false
+URxvt.internalBorder      : 12
+URxvt.cursorUnderline     : false
+URxvt.geometry            : 90x35
+URxvt.thickness           : 5
+URxvt.titleBar            : false
+URxvt.intensityStyles     : false
