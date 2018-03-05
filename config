@@ -8,48 +8,66 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:background:#222}
-background-alt = #444
+;background = ${xrdb:background:#222}
+background = #00000000
+background-alt = #cc232c33
 foreground = ${xrdb:foreground:#222}
-foreground-alt = #555
+foreground-alt = #bfb7a1 
 primary = ${xrdb:color2}
 secondary = ${xrdb:color1}
 alert = #bd2c40
 bcolor = #cc627560
-lunderline = ${xrdb:color9}
-runderline = ${xrdb:color11}
+lunderline = #00000000
+runderline = #00000000
+
+
+
+
+[bar/bsp-windows]
+modules-center = bspwm
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = xft:M+ 1MN:regular:size=8
+font-1 = xft:M+ 1MN:regular:size=8
+font-2 = siji:pixelsize=10;1
+
+offset-x = 1%
+offset-y = 1%
+
+override-redirect = true
+
 
 [bar/example]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 24
-;offset-x = 1%
-;offset-y = 1%
+height = 18
+offset-x = 1%
+offset-y = 1%
 radius = 0
 fixed-center = false
-
+bottom = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 
-line-size = 3
+line-size = 0
 line-color = #f00
 
 border-size = 0
 border-color = ${colors.bcolor}
 
 padding-left = 0
-padding-right = 2
+padding-right = 0
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-0 = xft:M+ 1MN:regular:size=8
+font-1 = xft:M+ 1MN:regular:size=8 
 font-2 = siji:pixelsize=10;1
 
 modules-left = alsa xkeyboard wlan eth mpd
-modules-center = bspwm
 modules-right = xbacklight date battery powermenu
 
 tray-position = left
@@ -67,7 +85,7 @@ tray-padding = 2
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
-
+override-redirect = true
 cursor-click = pointer
 cursor-scroll = ns-resize
 
@@ -79,7 +97,6 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
 format-prefix-underline = ${colors.secondary}
 
@@ -104,24 +121,23 @@ label-unmounted-foreground = ${colors.foreground-alt}
 [module/bspwm]
 type = internal/bspwm
 
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.lunderline}
+label-focused = "x"
+label-focused-underline= #00000000
 label-focused-padding = 2
 
-label-occupied = %index%
+label-occupied = "o"
 label-occupied-padding = 2
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
-label-empty = %index%
+label-empty = "o"
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
 ; Separator in between workspaces
-; label-separator = |
+label-separator = |
 
 [module/i3]
 type = internal/i3
@@ -261,9 +277,11 @@ time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
+ 
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
-
+format-prefix-padding = 0
+label-padding = 1
 label = %date% %time%
 
 [module/alsa]
