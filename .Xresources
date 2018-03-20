@@ -1,68 +1,110 @@
-! ------------------------------------------------------------------------------
-! Nord Color Scheme
-! By Arctic Ice Studio 
-! ------------------------------------------------------------------------------
+!! ------------------------------------------------------------------------------
+!! Nord Color Scheme
+!! By Arctic Ice Studio 
+!! ------------------------------------------------------------------------------
+!
+!! special
+!*.foreground:   #d8dee8
+!*.background:   #000000
+!*.cursorColor:  #b48ead
+!
+!! black
+!*.color0  : #4b5262
+!*.color8  : #434a5a
+!
+!! red
+!*.color1  : #bf616a
+!*.color9  : #b3555e
+!
+!! green
+!*.color2  : #a3be8c
+!*.color10 : #93ae7c
+!
+!! yellow
+!*.color3  : #ebcb8b
+!*.color11 : #dbbb7b
+!
+!! blue
+!*.color4  : #81a1c1
+!*.color12 : #7191b1
+!
+!! magenta
+!*.color5  : #b48ead
+!*.color13 : #a6809f
+!
+!! cyan
+!*.color6  : #93e5cc
+!*.color14 : #7bcdb4
+!
+!! white
+!*.color7  : #e5e9f0
+!*.color15 : #d1d5dc
+!
 
-! special
-*.foreground:   #d8dee8
-*.background:   #2f343f
-*.cursorColor:  #b48ead
+!el_k gslob re-write
 
-! black
-*.color0  : #4b5262
-*.color8  : #434a5a
+#define FG #eeeeee
+#define BG #121212
+#define C0 #262626
+#define C1 #FFB47D
+#define C2 #444444
+#define C3 #6c6c6c
+#define C4 #8a8a8a
+#define C5 #b2b2b2
+#define C6 #eeeeee
+#define C7 #ffffff
 
-! red
-*.color1  : #bf616a
-*.color9  : #b3555e
+#define ALT1 #222222
+#define ALT2 #333333
 
-! green
-*.color2  : #a3be8c
-*.color10 : #93ae7c
+! colors
+*.foreground:  FG
+*.background:  BG
+*.cursorColor: FG
+*.color0:      BG
+*.color1:      C1 
+*.color2:      C2 
+*.color3:      C3 
+*.color4:      C4 
+*.color5:      C5 
+*.color6:      C6 
+*.color7:      C7 
+*.color8:      C0 
+*.color9:      C1 
+*.color10:     C2 
+*.color11:     C3 
+*.color12:     C4 
+*.color13:     C5 
+*.color14:     C6 
+*.color15:     C7 
+! polybar
+*.polybar.value:  ALT1
+*.polybar.icon:   ALT2
 
-! yellow
-*.color3  : #ebcb8b
-*.color11 : #dbbb7b
 
-! blue
-*.color4  : #81a1c1
-*.color12 : #7191b1
-
-! magenta
-*.color5  : #b48ead
-*.color13 : #a6809f
-
-! cyan
-*.color6  : #93e5cc
-*.color14 : #7bcdb4
-
-! white
-*.color7  : #e5e9f0
-*.color15 : #d1d5dc
-
-URxvt*iso14755:         false
-URxvt*depth:            32
-URxvt.underlineColor:   #81a1c1
-URxvt.highlightColor:   #7191b1
-URxvt.throughColor:     #93e5cc
-URxvt*cursorColor:      #b48ead
-URxvt*cursorColor2:     #d8dee8
+URxvt*transparent:        false
+URxvt*shading:            25
+!URxvt.underlineColor:   #81a1c1
+!URxvt.highlightColor:   #7191b1
+!URxvt.throughColor:     #93e5cc
+URxvt*cursorColor:      C1
+URxvt*cursorColor2:     BG
 URxvt*scrollBar:        false
 URxvt*scrollBar_right:  false
 URxvt*internalBorder:   0
 URxvt*externalBorder:   0
-URxvt.colorIT:      	#a3be8c
-URxvt.colorBD:      	#e5e9f0
-URxvt.colorUL:      	#81a1c1
-URxvt.geometry: 		92x24
-URxvt.internalBorder:	24
-URxvt*letterSpace: 	    0
-URxvt*lineSpace: 		-3
-URxvt*font:             xft:M+ 1MN:regular:size=8
-URxvt*imFont:           xft:M+ 1MN:regular:size=8
-URxvt*boldFont:         xft:M+ 1MN:bold:size=8
-URxvt*italicFont:       xft:M+ 1MN:italic:size=8
-URxvt*boldItalicFont:   xft:M+ 1MN:regular:size=8
+! URxvt.colorIT:      	#a3be8c
+! URxvt.colorBD:      	#e5e9f0
+! URxvt.colorUL:      	#81a1c1
+URxvt.geometry: 		80x40
+URxvt.internalBorder:	18
+URxvt*letterSpace: 	    -1
+URxvt*lineSpace: 		0
+URxvt*font:             xft:mono:regular:size=10
+URxvt*imFont:           xft:mono:regular:size=10
+URxvt*boldFont:         xft:mono:regular:size=10
+URxvt*italicFont:       xft:mono:regular:size=10
+URxvt*boldItalicFont:   xft:mono:regular:size=10
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration
