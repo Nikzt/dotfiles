@@ -8,23 +8,32 @@ icon       = ${xrdb:polybar.icon}
 
 [bar/x]
 height = 20
-width = 100%
-border-size = 2
+width = 1800
+offset-x = 60
+offset-y = 25
+border-size = 0
 border-color = ${colors.background}
-module-margin = 1
+module-margin = 0
 
-modules-left = bspwm mpd
+modules-left = bspwm mpd xwindow
 modules-center = 
 modules-right = volume battery network time
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 =mono:size=09;3
-font-1 =siji:size=10;3
+font-0 =dina:size=7;1
+font-1 =siji:size=7;1
 tray-position = right
 tray-padding = 2
-line-size = 1
+line-size = 0
+override-redirect = true
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
+label-background = ${colors.icon}
+label-padding = 2
 
 [module/mpd]
 type = internal/mpd
@@ -119,7 +128,8 @@ format = <label-state> <label-mode>
 
 label-active = %name%
 label-active-padding = 1
-label-active-background = ${colors.icon}
+label-active-background = ${colors.highlight}
+label-active-foreground = ${colors.background}
 
 
 label-occupied = %name%

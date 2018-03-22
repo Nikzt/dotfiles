@@ -8,10 +8,10 @@ super + Return
 
 # program launcher
 super + @space
-	dmenu_run -b
+	rofi -show run -font "dina 11"
 
 super + shift + Return
-	chromium-browser
+	chromium-browser -start-fullscreen
 
 
 #### CUSTOM ####

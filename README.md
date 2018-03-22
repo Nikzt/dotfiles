@@ -1,2 +1,2 @@
 #MY DOTFILES
-Git your filthy hands off 'em
+git your filthy hands off 'em

@@ -6,16 +6,22 @@ sxhkd &
 bspc monitor -d 1 2 3 4
 
 bspc config border_width         2
-bspc config window_gap          45
+bspc config window_gap          20
+bspc config top_padding         50
+bspc config bottom_padding      30
+bspc config left_padding        40
+bspc config right_padding       40
+
 
 
 BORDERCOLOR=`xrdb -query | grep '*.color9' | awk '{print $NF}'`
 bspc config focused_border_color $BORDERCOLOR
 bspc config split_ratio          0.50
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
 bspc config click_to_focus       true
 
+bspc config external_rules_command ~/.config/bspwm/external_rules
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Chromium desktop='^2'
 bspc rule -a mplayer2 state=floating

@@ -46,7 +46,7 @@
 #define FG #eeeeee
 #define BG #121212
 #define C0 #262626
-#define C1 #FFB47D
+#define C1 #f78383
 #define C2 #444444
 #define C3 #6c6c6c
 #define C4 #8a8a8a
@@ -98,13 +98,13 @@ URxvt*externalBorder:   0
 ! URxvt.colorUL:      	#81a1c1
 URxvt.geometry: 		80x40
 URxvt.internalBorder:	18
-URxvt*letterSpace: 	    -1
+URxvt*letterSpace: 	    0
 URxvt*lineSpace: 		0
-URxvt*font:             xft:mono:regular:size=10
-URxvt*imFont:           xft:mono:regular:size=10
-URxvt*boldFont:         xft:mono:regular:size=10
-URxvt*italicFont:       xft:mono:regular:size=10
-URxvt*boldItalicFont:   xft:mono:regular:size=10
+URxvt*font:             xft:dina:regular:size=7
+URxvt*imFont:           xft:dina:regular:size=7
+URxvt*boldFont:         xft:dina:regular:size=7
+URxvt*italicFont:       xft:dina:regular:size=7
+URxvt*boldItalicFont:   xft:dina:regular:size=7
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration
@@ -116,3 +116,10 @@ Xft.hintstyle: hintslight
 Xft.hinting: 0
 Xft.antialias: 1
 Xft.rgba: rgb
+
+! rofi
+rofi.color-window: BG, BG, BG
+rofi.color-normal: BG, FG, BG, BG, C1
+rofi.color-active: BG, FG, BG, BG, C1
+rofi.color-urgent: BG, FG, BG, BG, C1
+rofi.bgalt: 	   C3
