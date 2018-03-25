@@ -140,11 +140,11 @@ URxvt.geometry: 		80x40
 URxvt.internalBorder:	9
 URxvt*letterSpace: 	    0
 URxvt*lineSpace: 		0
-URxvt*font:             xft:dina:regular:size=7
-URxvt*imFont:           xft:dina:regular:size=7
-URxvt*boldFont:         xft:dina:regular:size=7
-URxvt*italicFont:       xft:dina:regular:size=7
-URxvt*boldItalicFont:   xft:dina:regular:size=7
+URxvt*font:             xft:dina:regular:size=11
+URxvt*imFont:           xft:dina:regular:size=11
+URxvt*boldFont:         xft:dina:regular:size=11
+URxvt*italicFont:       xft:dina:regular:size=11
+URxvt*boldItalicFont:   xft:dina:regular:size=11
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration

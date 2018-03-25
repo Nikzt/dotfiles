@@ -22,8 +22,8 @@ modules-right = volume battery network time
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-font-0 =dina:size=7;1
-font-1 =siji:size=7;1
+font-0 =dina:size=11;2
+font-1 =siji:size=11;2
 tray-position = right
 tray-padding = 2
 line-size = 0
