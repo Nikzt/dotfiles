@@ -1,8 +1,8 @@
-!! ------------------------------------------------------------------------------
-!! Nord Color Scheme
-!! By Arctic Ice Studio 
-!! ------------------------------------------------------------------------------
-!
+! ------------------------------------------------------------------------------
+! Nord Color Scheme
+! By Arctic Ice Studio 
+! ------------------------------------------------------------------------------
+
 !! special
 !*.foreground:   #d8dee8
 !*.background:   #000000
@@ -43,12 +43,12 @@
 
 !el_k gslob re-write
 
-#define FG #eeeeee
-#define BG #121212
+!#define FG #eeeeee
+!#define BG #121212
 #define C0 #262626
-#define C1 #f78383
+!#define C1 #ff8e5e
 #define C2 #444444
-#define C3 #6c6c6c
+!#define C3 #6c6c6c
 #define C4 #8a8a8a
 #define C5 #b2b2b2
 #define C6 #eeeeee
@@ -58,26 +58,66 @@
 #define ALT2 #333333
 
 ! colors
-*.foreground:  FG
-*.background:  BG
-*.cursorColor: FG
-*.color0:      BG
-*.color1:      C1 
-*.color2:      C2 
-*.color3:      C3 
-*.color4:      C4 
-*.color5:      C5 
-*.color6:      C6 
-*.color7:      C7 
-*.color8:      C0 
-*.color9:      C1 
-*.color10:     C2 
-*.color11:     C3 
-*.color12:     C4 
-*.color13:     C5 
-*.color14:     C6 
-*.color15:     C7 
+!*.foreground:  FG
+!*.background:  BG
+!*.cursorColor: FG
+!*.color0:      BG
+!*.color1:      C1 
+!*.color2:      C2 
+!*.color3:      C3 
+!*.color4:      C4 
+!*.color5:      C5 
+!*.color6:      C6 
+!*.color7:      C7 
+!*.color8:      C0 
+!*.color9:      C1 
+!*.color10:     C2 
+!*.color11:     C3 
+!*.color12:     C4 
+!*.color13:     C5 
+!*.color14:     C6 
+!*.color15:     C7 
 ! polybar
+
+! █▓▒░ miasma
+*.foreground:   #c2c2b0
+# define FG #c2c2b0
+*.background:   #222222
+# define BG #222222
+*.cursorColor:  #918f6e
+
+! black
+*.color0:       #222222
+*.color8:       #666666
+! red
+*.color1:       #685742
+# define C1 #685742
+*.color9:       #685742
+! green
+*.color2:       #5f875f
+*.color10:      #5f875f
+! yellow
+*.color3:       #B36D43
+# define C3 #B36D43
+*.color11:      #B36D43
+! blue
+*.color4:       #78824B
+*.color12:      #78824b
+! magenta
+*.color5:       #bb7744
+*.color13:      #bb7744
+! cyan
+*.color6:       #C9A554
+*.color14:      #C9A554
+! white
+*.color7:       #D7C483
+*.color15:      #D7C483
+! others
+URxvt.colorIT:  #78824B
+URxvt.colorBD:  #d3d3d3
+URxvt.colorUL:  #40413E
+
+
 *.polybar.value:  ALT1
 *.polybar.icon:   ALT2
 
@@ -97,7 +137,7 @@ URxvt*externalBorder:   0
 ! URxvt.colorBD:      	#e5e9f0
 ! URxvt.colorUL:      	#81a1c1
 URxvt.geometry: 		80x40
-URxvt.internalBorder:	18
+URxvt.internalBorder:	9
 URxvt*letterSpace: 	    0
 URxvt*lineSpace: 		0
 URxvt*font:             xft:dina:regular:size=7
@@ -119,7 +159,7 @@ Xft.rgba: rgb
 
 ! rofi
 rofi.color-window: BG, BG, BG
-rofi.color-normal: BG, FG, BG, BG, C1
-rofi.color-active: BG, FG, BG, BG, C1
-rofi.color-urgent: BG, FG, BG, BG, C1
+rofi.color-normal: BG, FG, BG, BG, C3
+rofi.color-active: BG, FG, BG, BG, C3
+rofi.color-urgent: BG, FG, BG, BG, C3
 rofi.bgalt: 	   C3

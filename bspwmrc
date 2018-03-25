@@ -14,7 +14,9 @@ bspc config right_padding       40
 
 
 
-BORDERCOLOR=`xrdb -query | grep '*.color9' | awk '{print $NF}'`
+BORDERCOLOR=`xrdb -query | grep '*.color3' | awk '{print $NF}'`
+BORDERCOLOR_NORMAL=`xrdb -query | grep '*.polybar.icon' | awk '{print $NF}'`
+bspc config normal_border_color $BORDERCOLOR_NORMAL
 bspc config focused_border_color $BORDERCOLOR
 bspc config split_ratio          0.50
 bspc config borderless_monocle   false
@@ -33,7 +35,6 @@ bspc rule -a mpv state=floating follow=off
 
 # bar at top of screen
 polybar -r x &
-compton &
 sleep 1
 
 fluxgui &

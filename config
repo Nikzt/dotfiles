@@ -118,7 +118,7 @@ time-alt = "%Y-%m-%d"
 
 label = " %time% "
 format-background  = ${colors.highlight}
-format-foreground  = ${colors.background}
+format-foreground  = ${colors.foreground}
 
 [module/bspwm]
 type = internal/bspwm
