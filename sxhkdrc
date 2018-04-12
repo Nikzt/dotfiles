@@ -8,7 +8,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run -font "dina 11"
+	rofi -show run -font "PragmataPro 12"
 
 super + shift + Return
 	chromium-browser -start-fullscreen
@@ -17,7 +17,7 @@ super + shift + Return
 #### CUSTOM ####
 # negative -w arg to account for a border width (default: 100%)
 super + backslash
-    tdrop -ma -w -4 -h 30% -y 0% urxvt
+	tdrop -ma -w 800 -x 60 -h 27% -y 45 urxvt
 
 super + shift + Return
 	chromium-browser
