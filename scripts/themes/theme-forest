@@ -1,5 +1,0 @@
-#!/bin/bash
-
-wal -i ~/Pictures/dirt-road.jpg
-gsettings set org.gnome.desktop.background picture-uri file:///home/bence/Pictures/dirt-road.jpg
-
