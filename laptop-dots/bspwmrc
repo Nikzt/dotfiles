@@ -1,0 +1,66 @@
+#! /bin/sh
+
+sxhkd &
+#wal -R
+
+bspc monitor -d 一 二 三 四 五
+
+
+background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
+foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
+color0=$(xrdb -query | grep "color0" | cut -f2 | sed -r 's/#//' | head -n 1)
+color1=$(xrdb -query | grep "color1" | cut -f2 | sed -r 's/#//' | head -n 1)
+color2=$(xrdb -query | grep "color2" | cut -f2 | sed -r 's/#//' | head -n 1)
+color3=$(xrdb -query | grep "color3" | cut -f2 | sed -r 's/#//' | head -n 1)
+color4=$(xrdb -query | grep "color4" | cut -f2 | sed -r 's/#//' | head -n 1)
+color5=$(xrdb -query | grep "color5" | cut -f2 | sed -r 's/#//' | head -n 1)
+color6=$(xrdb -query | grep "color6" | cut -f2 | sed -r 's/#//' | head -n 1)
+color7=$(xrdb -query | grep "color7" | cut -f2 | sed -r 's/#//' | head -n 1)
+color8=$(xrdb -query | grep "color8" | cut -f2 | sed -r 's/#//' | head -n 1)
+
+
+bspc config border_width         0
+bspc config window_gap          20
+bspc config top_padding         0
+bspc config bottom_padding      0
+bspc config left_padding        0
+bspc config right_padding       0
+
+
+
+bspc config normal_border_color "#$background"
+bspc config focused_border_color "#$color4"
+bspc config presel_feedback_color  "#$color4"
+bspc config split_ratio          0.50
+bspc config borderless_monocle   false
+bspc config gapless_monocle      false
+bspc config click_to_focus       button1
+
+bspc config external_rules_command ~/.config/bspwm/external_rules
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+bspc rule -a w3m state=floating follow=off
+bspc rule -a feh state=floating rectangle=1200x900+320+100
+bspc rule -a mpv state=floating follow=off
+
+# bar at top of screen
+polybar -r x &
+
+# set redshift location (shifts screen color to red when sun is down)
+
+# ---window layout on login---
+
+feh --bg-fill ~/Pictures/Wallpapers/wallpaper.jpg
+gsettings set org.gnome.desktop.background picture-uri file:///home/bence/Pictures/Wallpapers/wallpaper.jpg
+
+compton &
+
+# start music player service
+mpd &
+
+
+
+
