@@ -1,23 +1,30 @@
 
 
-#define FG #eeeeee
-#define BG #121212
-#define C0 #262626
-#define C1 #ff8e5e
-#define C2 #444444
-#define C3 #6c6c6c
-#define C4 #8a8a8a
-#define C5 #b2b2b2
-#define C6 #eeeeee
-#define C7 #ffffff
+#define FG #d8dee8
+#define BG #2f343f
+#define C0 #4b5262
+#define C8 #434a5a
+#define C1 #bf616a
+#define C9 #b3555e
+#define C2 #a3be8c
+#define C10 #93ae7c
+#define C3 #ebcb8b
+#define C11 #dbbb7b
+#define C4 #81a1c1
+#define C12 #7191b1
+#define C5 #b48ead
+#define C13 #a6809f
+#define C6 #89d0bA
+#define C14 #7dbba8
+#define C7 #e5e9f0
+#define C15 #d1d5dc
 
-#define ALT1 #222222
-#define ALT2 #333333
+#define A0 #333333
+
 
 ! special
 *.foreground:   #d8dee8
 *.background:   #2f343f
-*.cursorColor:  #b48ead
 
 ! black
 *.color0  : #4b5262
@@ -72,11 +79,11 @@ URxvt.geometry: 		80x40
 URxvt.internalBorder:	9
 URxvt*letterSpace: 	    0
 URxvt*lineSpace: 		0
-URxvt*font:             xft:M+ 1mn:regular:size=10
-URxvt*imFont:           xft:M+ 1mn:regular:size=10
-URxvt*boldFont:         xft:M+ 1mn:bold:size=10
-URxvt*italicFont:       xft:M+ 1mn:regular:size=10
-URxvt*boldItalicFont:   xft:M+ 1mn:regular:size=10
+URxvt*font:             xft:Iosevka Term:regular:size=11
+URxvt*imFont:           xft:Iosevka Term:regular:size=11
+URxvt*boldFont:         xft:Iosevka Term:bold:size=11
+URxvt*italicFont:       xft:Iosevka Term:regular:size=11
+URxvt*boldItalicFont:   xft:Iosevka Term:regular:size=11
 
 ! ------------------------------------------------------------------------------
 ! Xft Font Configuration
@@ -90,8 +97,13 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! rofi
-rofi.color-window: BG, BG, BG
+rofi.color-window: BG, C1, C1
 rofi.color-normal: BG, FG, BG, BG, C3
 rofi.color-active: BG, FG, BG, BG, C3
 rofi.color-urgent: BG, FG, BG, BG, C3
 rofi.bgalt: 	   C3
+rofi.bw:           6
+rofi.location:     3
+rofi.yoffset:     52
+rofi.xoffset:     -160
+rofi.width:        20

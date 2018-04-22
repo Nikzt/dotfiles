@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wal -i ~/Pictures/foggy-forest1.jpg
+gsettings set org.gnome.desktop.background picture-uri file:///home/bence/Pictures/foggy-forest1.jpg
+

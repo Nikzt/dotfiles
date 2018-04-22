@@ -1,8 +1,0 @@
-#! /bin/sh
-
-class=$2
-
-if [ "$class" = Chromium ]
-        then
-                sleep 0.1 && echo "state=tiled"
-fi

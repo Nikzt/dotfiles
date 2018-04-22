@@ -1,0 +1,14 @@
+#!/bin/bash
+
+bspc rule -a URxvt -o state=floating rectangle=960x360+480+40
+urxvt -e bash -c "alsamixer" &
+sleep 0.5
+
+bspc rule -a URxvt -o state=floating rectangle=650x290+635+450
+urxvt -e bash -c "ncmpcpp" &
+sleep 0.5
+
+bspc rule -a URxvt -o state=floating rectangle=960x200+480+830
+urxvt -e cava &
+sleep 0.5
+
