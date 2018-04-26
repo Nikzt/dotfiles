@@ -1,0 +1,62 @@
+#! /bin/sh
+
+sxhkd &
+#wal -R
+
+bspc monitor -d 一 二 三 四 五
+
+
+background=$(xrdb -query | grep "background" | cut -f2 | sed -r 's/#//' | head -n 1)
+foreground=$(xrdb -query | grep "foreground" | cut -f2 | sed -r 's/#//' | head -n 1)
+color0=$(xrdb -query | grep "color0" | cut -f2 | sed -r 's/#//' | head -n 1)
+color1=$(xrdb -query | grep "color1" | cut -f2 | sed -r 's/#//' | head -n 1)
+color2=$(xrdb -query | grep "color2" | cut -f2 | sed -r 's/#//' | head -n 1)
+color3=$(xrdb -query | grep "color3" | cut -f2 | sed -r 's/#//' | head -n 1)
+color4=$(xrdb -query | grep "color4" | cut -f2 | sed -r 's/#//' | head -n 1)
+color5=$(xrdb -query | grep "color5" | cut -f2 | sed -r 's/#//' | head -n 1)
+color6=$(xrdb -query | grep "color6" | cut -f2 | sed -r 's/#//' | head -n 1)
+color7=$(xrdb -query | grep "color7" | cut -f2 | sed -r 's/#//' | head -n 1)
+color8=$(xrdb -query | grep "color8" | cut -f2 | sed -r 's/#//' | head -n 1)
+
+
+bspc config border_width         0
+bspc config window_gap          20
+bspc config top_padding         0
+bspc config bottom_padding      0
+bspc config left_padding        0
+bspc config right_padding       0
+
+
+
+bspc config normal_border_color "#$background"
+bspc config focused_border_color "#$color4"
+bspc config presel_feedback_color  "#$color4"
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+bspc config click_to_focus       button1
+
+bspc rule -a w3m state=floating follow=off
+bspc rule -a mpv state=floating follow=off
+bspc rule -a stna state=floating follow=on
+
+# bar at top of screen
+~/wm/scripts/taskbar/init-tab.sh
+
+polybar -r x &
+
+# set redshift location (shifts screen color to red when sun is down)
+
+# ---window layout on login---
+
+feh --bg-fill ~/Pictures/Wallpapers/wallpaper.jpg
+gsettings set org.gnome.desktop.background picture-uri file:///home/bence/Pictures/Wallpapers/wallpaper.jpg
+
+compton &
+
+# start music player service
+mpd &
+
+
+
+

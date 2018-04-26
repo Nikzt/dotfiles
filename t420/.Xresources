@@ -1,0 +1,109 @@
+
+
+#define FG #ebece6
+#define BG #1e1e20
+#define C0 #3c3a3a
+#define C8 #555555
+#define C1 #ee6a6b
+#define C9 #df7a7c
+#define C2 #86ffa4
+#define C10 #97dfa9
+#define C3 #f3ff7b
+#define C11 #f0fa8b
+#define C4 #69baec
+#define C12 #98c3de
+#define C5 #ff83cc
+#define C13 #d389b5
+#define C6 #4ddcfa
+#define C14 #8cebff
+#define C7 #ededec
+#define C15 #ededec
+
+#define A0 #333333
+
+
+! special
+*.foreground:   #ebece6
+*.background:   #1e1e20
+
+! black
+*.color0:       #3c3a3a
+*.color8:       #555555
+
+! red
+*.color1:       #ee6a6b
+*.color9:       #df7a7c
+
+! green
+*.color2:       #86ffa4
+*.color10:      #97dfa9
+
+! yellow
+*.color3:       #f3ff7b
+*.color11:      #f0fa8b
+
+! blue
+*.color4:       #69baec
+*.color12:      #98c3de
+
+! magenta
+*.color5:       #ff83cc
+*.color13:      #d389b5
+
+! cyan
+*.color6:       #4ddcfa
+*.color14:      #8cebff
+
+! white
+*.color7:       #ededec
+*.color15:      #ededec
+
+URxvt*transparent:        false
+URxvt*shading:            25
+!URxvt.underlineColor:   #81a1c1
+!URxvt.highlightColor:   #7191b1
+!URxvt.throughColor:     #93e5cc
+URxvt*cursorColor:      #ff00ee
+URxvt*cursorColor2:     BG
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  false
+URxvt*internalBorder:   0
+URxvt*externalBorder:   0
+! URxvt.colorIT:      	#a3be8c
+! URxvt.colorBD:      	#e5e9f0
+! URxvt.colorUL:      	#81a1c1
+URxvt.geometry: 		80x40
+URxvt.internalBorder:	9
+URxvt*letterSpace: 	    0
+URxvt*lineSpace: 		0
+URxvt*font:             xft:Iosevka Term:regular:size=11
+URxvt*imFont:           xft:Iosevka Term:regular:size=11
+URxvt*boldFont:         xft:Iosevka Term:bold:size=11
+URxvt*italicFont:       xft:Iosevka Term:regular:size=11
+URxvt*boldItalicFont:   xft:Iosevka Term:regular:size=11
+
+! ------------------------------------------------------------------------------
+! Xft Font Configuration
+! ------------------------------------------------------------------------------
+
+Xft.autohint: 0
+Xft.lcdfilter: lcddefault
+Xft.hintstyle: hintslight
+Xft.hinting: 0
+Xft.antialias: 1
+Xft.rgba: rgb
+
+! rofi
+rofi.color-window: BG, C1, BG
+rofi.color-normal: BG, FG, BG, BG, C2
+rofi.color-active: BG, FG, BG, BG, C2
+rofi.color-urgent: BG, FG, BG, BG, C2
+rofi.bgalt: 	   C2
+rofi.bw:           0
+rofi.font:         Iosevka Term 12
+!rofi.location:     3
+!rofi.yoffset:     52
+!rofi.xoffset:     -160
+!rofi.width:        20
+
+Xcursor.theme: DMZ-Black

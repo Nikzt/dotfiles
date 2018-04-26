@@ -1,0 +1,262 @@
+{;=====================================================
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/jaagr/polybar
+;
+;   The README contains a lot of information
+;
+;=====================================================
+; find icon name : fc-match -a |grep -i Material
+; to find icon: xfd -fa MaterialIcons,
+; echo "\ueXXX" to print and paste here
+
+[colors]
+; background = ${xrdb:background:#222}
+background = #1e1e20
+
+foreground = ${xrdb:foreground:#222}
+foreground-alt = #555
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/x]
+enable-ipc = true
+width = 100%
+height = 30
+offset-x = 0
+offset-y = 0
+radius = 0.0
+fixed-center = true
+bottom = true
+
+background = ${colors.background}
+foreground = ${xrdb:foreground:#FF0000}
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = ${colors.background}
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 0
+
+font-0 = Iosevka Term:pixelsize=11;3
+font-1 = M+ 1mn:pixelsize=15;3
+font-2 = MaterialIcons:size=15:antialias=false;6
+
+override-redirect = false
+
+modules-left = ranger calcurse notes timer email htop 
+modules-center = bspwm 
+modules-right = volume battery memory cpu date 
+
+tray-position = right
+tray-padding = 2
+
+wm-restack = bspwm
+
+
+
+
+[module/calcurse]
+type = custom/ipc
+hook-0 = bartermapp calcurse 2 
+hook-1 = echo "%{F#666 B#1e1e20} 2%{F- B-}%{B#1e1e20}  %{B-}"
+click-left = polybar-msg hook calcurse 1 && closetabs 2
+initial = 2
+
+[module/ranger]
+type = custom/ipc
+hook-0 = bartermapp ranger 1 
+hook-1 = echo "%{F#666 B#1e1e20} 1%{F- B-}%{B#1e1e20}  %{B-}"
+click-left = polybar-msg hook ranger 1 && closetabs 1
+initial = 2
+
+[module/subscriptions]
+type = custom/text
+content = %{F#666}3%{F-} 
+click-left = bartermapp newsboat 3 
+content-underline = ${xrdb:color5}
+
+[module/ncmpcpp]
+type = custom/text
+content = %{F#666}4%{F-} 
+click-left = bartermapp ncmpcpp 4 
+content-underline = ${xrdb:color4}
+
+[module/notes]
+type = custom/ipc
+hook-0 = bartermapp editnote 3 
+hook-1 = echo "%{F#666 B#1e1e20} 3%{F- B-}%{B#1e1e20}  %{B-}"
+click-left = polybar-msg hook notes 1 && closetabs 3
+initial = 2
+
+
+[module/timer]
+type = custom/ipc
+hook-0 = bartermapp termdown 4 
+hook-1 = echo "%{F#666 B#1e1e20} 4%{F- B-}%{B#1e1e20}  %{B-}"
+click-left = polybar-msg hook timer 1 && closetabs 4
+initial = 2
+
+[module/email]
+type = custom/ipc
+hook-0 = bartermapp mutt 5 
+hook-1 = echo "%{F#666 B#1e1e20} 5%{F- B-}%{B#1e1e20}  %{B-}"
+click-left = polybar-msg hook email 1 && closetabs 5
+initial = 2
+
+[module/htop]
+type = custom/ipc
+hook-0 = bartermapp htop 6 
+hook-1 = echo "%{F#666 B#1e1e20} 6%{F- B-}%{B#1e1e20}  %{B-}"
+click-left = polybar-msg hook htop 1 && closetabs 6
+initial = 2
+
+[module/wlan]
+
+type = internal/network
+interface = wlp2s0
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+
+format-disconnected = <label-disconnected>
+label-disconnected = 
+label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %name%
+label-focused-background = #b0363636
+label-focused-underline= ${xrdb:color9:#ff0000}
+label-focused-padding = 1
+
+label-occupied = %name%
+
+label-occupied-foreground = ${xrdb:color2:FF000000}
+label-occupied-padding = 1
+
+label-urgent = %name%
+label-urgent-background = ${xrdb:color1:#ff0000}
+label-urgent-padding = 1
+
+label-empty = %name%
+label-empty-foreground = ${xrdb:foreground:#ff0000}
+label-empty-padding = 1
+
+[module/battery]
+
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = "<animation-charging><label-charging> "
+format-discharging = "<ramp-capacity><label-discharging> "
+format-full = "<ramp-capacity><label-full> "
+
+
+format-full-prefix-foreground = ${colors.foreground-alt}
+
+ramp-capacity-0 = 
+ramp-capacity-foreground = ${colors.foreground-alt}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-foreground = ${colors.foreground-alt}
+animation-charging-framerate = 750
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-alt}
+label = "%percentage%% "
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix =  
+format-prefix-foreground = ${colors.foreground-alt}
+label = "%percentage_used%% "
+
+[module/date]
+type = internal/date
+interval = 5
+
+date =
+date-alt = "%Y-%m-%d"
+
+time =%H:%M
+time-alt =%H:%M:%S
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground-alt}
+
+label =%date%%time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = "<label-volume> <bar-volume> "
+label-volume = " "
+label-volume-foreground = ${colors.foreground-alt}
+
+format-muted-prefix = " "
+format-muted-foreground = ${colors.foreground-alt}
+label-muted = sound muted
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${xrdb:color2}
+bar-volume-foreground-1 = ${xrdb:color2}
+bar-volume-foreground-2 = ${xrdb:color2}
+bar-volume-foreground-3 = ${xrdb:color2}
+bar-volume-foreground-4 = ${xrdb:color2}
+bar-volume-foreground-5 = ${xrdb:color3}
+bar-volume-foreground-6 = ${xrdb:color1}
+bar-volume-gradient = false
+bar-volume-indicator = ━
+bar-volume-indicator-font = 0
+bar-volume-fill = ━
+bar-volume-fill-font = 0
+bar-volume-empty = ━
+bar-volume-empty-font = 0
+bar-volume-empty-foreground = ${xrdb:color0}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = <ramp> <label>
+format-underline = #f50a4d
+format-warn = <ramp> <label-warn>
+format-warn-underline = ${self.format-underline}
+
+label = %temperature%
+label-warn = %temperature%
+label-warn-foreground = ${colors.secondary}
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-foreground = ${colors.foreground-alt}
+
+
+[settings]
+screenchange-reload = true
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
