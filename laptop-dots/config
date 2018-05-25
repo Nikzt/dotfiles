@@ -12,7 +12,7 @@
 
 [colors]
 ; background = ${xrdb:background:#222}
-background = #dd1e1e20
+background = #121212
 
 foreground = ${xrdb:foreground:#222}
 foreground-alt = #555
@@ -21,8 +21,9 @@ secondary = #e60053
 alert = #bd2c40
 
 [bar/x]
+enable-ipc = true
 width = 100%
-height = 40
+height = 30
 offset-x = 0
 offset-y = 0
 radius = 0.0
@@ -38,38 +39,43 @@ line-color = #f00
 border-size = 0
 border-color = ${colors.background}
 
-padding-left = 1
+padding-left = 0
 padding-right = 1
 
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 0
+module-margin-right = 0
 
-font-0 = Iosevka Term:pixelsize=13;2
+font-0 = Iosevka Term:pixelsize=11;3
 font-1 = M+ 1mn:pixelsize=15;3
-font-2 = MaterialIcons:size=18:antialias=false;6
+font-2 = MaterialIcons:size=15:antialias=false;6
 
 override-redirect = false
 
-modules-left = calcurse ranger subscriptions ncmpcpp notes volume
+modules-left = ranger calcurse notes timer email htop 
 modules-center = bspwm 
-modules-right = wlan battery memory cpu date 
+modules-right = volume battery memory cpu date 
 
 tray-position = right
 tray-padding = 2
 
 wm-restack = bspwm
 
+
+
+
 [module/calcurse]
-type = custom/text
-content = %{F#666}1%{F-} 
-content-underline = ${xrdb:color3}
-click-left = bartermapp calcurse 1 
+type = custom/ipc
+hook-0 = bartermapp calcurse 2 
+hook-1 = echo "%{F#666 B#121212} 2%{F- B-}%{B#121212}  %{B-}"
+click-left = polybar-msg hook calcurse 1 && closetabs 2
+initial = 2
 
 [module/ranger]
-type = custom/text
-content = %{F#666}2%{F-} 
-click-left = bartermapp ranger 2 
-content-underline = ${xrdb:color2}
+type = custom/ipc
+hook-0 = bartermapp ranger 1 
+hook-1 = echo "%{F#666 B#121212} 1%{F- B-}%{B#121212}  %{B-}"
+click-left = polybar-msg hook ranger 1 && closetabs 1
+initial = 2
 
 [module/subscriptions]
 type = custom/text
@@ -84,10 +90,33 @@ click-left = bartermapp ncmpcpp 4
 content-underline = ${xrdb:color4}
 
 [module/notes]
-type = custom/text
-content = %{F#666}5%{F-} 
-click-left = bartermapp editnote 5
-content-underline = ${xrdb:color1}
+type = custom/ipc
+hook-0 = bartermapp editnote 3 
+hook-1 = echo "%{F#666 B#121212} 3%{F- B-}%{B#121212}  %{B-}"
+click-left = polybar-msg hook notes 1 && closetabs 3
+initial = 2
+
+
+[module/timer]
+type = custom/ipc
+hook-0 = bartermapp termdown 4 
+hook-1 = echo "%{F#666 B#121212} 4%{F- B-}%{B#121212}  %{B-}"
+click-left = polybar-msg hook timer 1 && closetabs 4
+initial = 2
+
+[module/email]
+type = custom/ipc
+hook-0 = bartermapp mutt 5 
+hook-1 = echo "%{F#666 B#121212} 5%{F- B-}%{B#121212}  %{B-}"
+click-left = polybar-msg hook email 1 && closetabs 5
+initial = 2
+
+[module/htop]
+type = custom/ipc
+hook-0 = bartermapp htop 6 
+hook-1 = echo "%{F#666 B#121212} 6%{F- B-}%{B#121212}  %{B-}"
+click-left = polybar-msg hook htop 1 && closetabs 6
+initial = 2
 
 [module/wlan]
 
@@ -109,13 +138,13 @@ ramp-signal-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %name%
-label-focused-background = #dd161616
+label-focused-background = #b0363636
 label-focused-underline= ${xrdb:color9:#ff0000}
 label-focused-padding = 1
 
 label-occupied = %name%
 
-label-occupied-foreground = ${xrdb:color1:FF000000}
+label-occupied-foreground = ${xrdb:color2:FF000000}
 label-occupied-padding = 1
 
 label-urgent = %name%
@@ -133,10 +162,11 @@ battery = BAT1
 adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
-format-discharging = <ramp-capacity> <label-discharging>
+format-charging = "<animation-charging><label-charging> "
+format-discharging = "<ramp-capacity><label-discharging> "
+format-full = "<ramp-capacity><label-full> "
 
-format-full-prefix = 
+
 format-full-prefix-foreground = ${colors.foreground-alt}
 
 ramp-capacity-0 = 
@@ -150,36 +180,36 @@ animation-charging-framerate = 750
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-label = %percentage%%
+label = "%percentage%% "
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix =  
 format-prefix-foreground = ${colors.foreground-alt}
-label = %percentage_used%%
+label = "%percentage_used%% "
 
 [module/date]
 type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = "%Y-%m-%d"
 
-time = %H:%M
-time-alt = %H:%M:%S
+time =%H:%M
+time-alt =%H:%M:%S
 
-format-prefix =  
+format-prefix =
 format-prefix-foreground = ${colors.foreground-alt}
 
-label = %date% %time%
+label =%date%%time%
 
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
+format-volume = "<label-volume> <bar-volume> "
 label-volume = " "
 label-volume-foreground = ${colors.foreground-alt}
 

@@ -11,15 +11,17 @@
 ######################################
 
 super + F1
-	bartermapp calcurse 1
+	polybar-msg hook ranger 1 && closetabs 1
 super + F2
-	bartermapp ranger 2
+	polybar-msg hook calcurse 1 && closetabs 2
 super + F3
-	bartermapp newsboat 3
+	polybar-msg hook notes 1 && closetabs 3
 super + F4
-	bartermapp ncmpcpp 4
+	polybar-msg hook timer 1 && closetabs 4
 super + F5
-	bartermapp editnote 5
+	polybar-msg hook email 1 && closetabs 5
+super + F6
+	polybar-msg hook htop 1 && closetabs 6
 
 
 # terminal emulator
@@ -28,7 +30,7 @@ super + Return
 
 # program launcher
 super + @space
-	rofi -show run -font "Iosevka Term"
+	rofi -show run 
 
 super + shift + Return
 	vivaldi
@@ -37,13 +39,12 @@ super + shift + Return
 #### CUSTOM ####
 # negative -w arg to account for a border width (default: 100%)
 super + backslash
-	tdrop -ma -w 800 -x 1120 -h 300 -y 740 st
+	tdrop -a -w 800 -x 1120 -h 300 -y 750 -f "-c stna" stna 
 
-super + shift + Return
-	chromium-browser
+super + shift + backslash
+	drawterm
 
-super + n
-	~/wm/scripts/notes.sh
+
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -56,6 +57,9 @@ super + Escape
 # quit bspwm normally
 super + alt + Escape
 	bspc quit
+
+super + shift + Escape
+	systemctl poweroff
 
 # close and kill
 super + {_,shift + }w

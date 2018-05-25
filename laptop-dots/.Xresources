@@ -94,13 +94,16 @@ Xft.antialias: 1
 Xft.rgba: rgb
 
 ! rofi
-rofi.color-window: BG, C1, C1
-rofi.color-normal: BG, FG, BG, BG, C3
-rofi.color-active: BG, FG, BG, BG, C3
-rofi.color-urgent: BG, FG, BG, BG, C3
-rofi.bgalt: 	   C3
+rofi.color-window: BG, C1, BG
+rofi.color-normal: BG, FG, BG, BG, C2
+rofi.color-active: BG, FG, BG, BG, C2
+rofi.color-urgent: BG, FG, BG, BG, C2
+rofi.bgalt: 	   C2
 rofi.bw:           0
-rofi.location:     3
-rofi.yoffset:     52
-rofi.xoffset:     -160
-rofi.width:        20
+rofi.font:         Iosevka Term 12
+!rofi.location:     3
+!rofi.yoffset:     52
+!rofi.xoffset:     -160
+!rofi.width:        20
+
+Xcursor.theme: DMZ-Black
